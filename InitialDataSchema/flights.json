@@ -1,0 +1,26 @@
+[
+    {
+        "_id": "e6d836e5-3fc2-42b6-8e9a-24d2f8fcd7a1",
+        "FlightNumber": "FL001",
+        "Origin": "New York",
+        "Destination": "Los Angeles",
+        "DepartureTime": "2025-01-10T09:00:00Z",
+        "ArrivalTime": "2025-01-10T12:00:00Z"
+    },
+    {
+        "_id": "d4f283b7-4c1d-4098-bb6f-9c7afbe54f21",
+        "FlightNumber": "FL002",
+        "Origin": "Chicago",
+        "Destination": "Miami",
+        "DepartureTime": "2025-01-11T14:00:00Z",
+        "ArrivalTime": "2025-01-11T17:00:00Z"
+    },
+    {
+        "_id": "c9e1af96-47c9-4b6d-8dd9-86e4f975c241",
+        "FlightNumber": "FL003",
+        "Origin": "San Francisco",
+        "Destination": "Houston",
+        "DepartureTime": "2025-01-12T06:00:00Z",
+        "ArrivalTime": "2025-01-12T10:00:00Z"
+    }
+]

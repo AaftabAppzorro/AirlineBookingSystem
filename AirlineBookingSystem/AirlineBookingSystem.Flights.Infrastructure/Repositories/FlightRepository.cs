@@ -14,6 +14,21 @@ namespace AirlineBookingSystem.Flights.Infrastructure.Repositories
             _dbConnection = dbConnection;
         }
 
+        public async Task<IEnumerable<Flight>> GetAllFlightsAsync()
+        {
+            const string sql = @"
+            SELECT
+                Id,
+                FlightNumber,
+                Origin,
+                Destination,
+                ArrivalTime,
+                DepartureTime
+            FROM Flights";
+
+            return await _dbConnection.QueryAsync<Flight>(sql);
+        }
+
         public async Task AddFlightAsync(Flight flight)
         {
             const string sql = @"
@@ -48,7 +63,7 @@ namespace AirlineBookingSystem.Flights.Infrastructure.Repositories
             await _dbConnection.ExecuteAsync(sql, new { Id = flightId });
         }
 
-        public async Task<IEnumerable<Flight>> GetFlightByIdAsync(Guid flightId)
+        public async Task<Flight> GetFlightByIdAsync(Guid flightId)
         {
             const string sql = @"
             SELECT
@@ -61,7 +76,7 @@ namespace AirlineBookingSystem.Flights.Infrastructure.Repositories
             FROM Flights
             WHERE Id = @Id;";
 
-            return await _dbConnection.QueryAsync<Flight>(sql, new { Id = flightId });
+            return await _dbConnection.QuerySingleAsync<Flight>(sql, new { Id = flightId });
         }
     }
 }

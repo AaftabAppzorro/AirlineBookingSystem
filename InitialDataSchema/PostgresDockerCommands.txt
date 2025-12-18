@@ -1,0 +1,9 @@
+docker pull postgres:latest
+docker run --name postgres-local -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres123 -e POSTGRES_DB=PaymentDb -p 5432:5432 -d postgres
+
+CREATE TABLE Payments (
+    Id UUID PRIMARY KEY,
+    BookingId UUID NOT NULL,
+    Amount DECIMAL(10, 2) NOT NULL,
+    PaymentDate TIMESTAMP NOT NULL
+);

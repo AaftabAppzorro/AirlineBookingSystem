@@ -4,7 +4,8 @@ namespace AirlineBookingSystem.Flights.Core.Repositories
 {
     public interface IFlightRepository
     {
-        Task<IEnumerable<Flight>> GetFlightByIdAsync(Guid flightId);
+        Task<IEnumerable<Flight>> GetAllFlightsAsync();
+        Task<Flight> GetFlightByIdAsync(Guid flightId);
         Task AddFlightAsync(Flight flight);
         Task DeleteFlightAsync(Guid flightId);
     }

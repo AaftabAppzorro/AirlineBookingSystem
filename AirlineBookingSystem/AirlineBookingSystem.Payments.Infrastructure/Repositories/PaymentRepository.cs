@@ -12,7 +12,7 @@ namespace AirlineBookingSystem.Payments.Infrastructure.Repositories
         {
             _dbConnection = dbConnection;
         }
-        public async Task CreateAsync(Payment payment)
+        public async Task ProcessPaymentAsync(Payment payment)
         {
             const string sql = @"
             INSERT INTO Payments
@@ -33,7 +33,7 @@ namespace AirlineBookingSystem.Payments.Infrastructure.Repositories
             await _dbConnection.ExecuteAsync(sql, new
             {
                 payment.Id,
-                BookingId = payment.bookingId,
+                BookingId = payment.BookingId,
                 payment.Amount,
                 payment.PaymentDate
             });
