@@ -16,7 +16,8 @@ namespace AirlineBookingSystem.Flights.Application.Handlers
 
         public async Task<IEnumerable<Flight>> Handle(GetAllFlightsQuery request, CancellationToken cancellationToken)
         {
-            return await _repository.GetAllFlightsAsync();
+            //return await _repository.GetAllFlightsAsync();
+            return await _repository.GetFlightsAsync();
         }
     }
 }
